@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Forum</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+     <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-database.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-auth.js"></script>
+     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCplQZXqh36oHLvGQR09jt3YzsRZN1dXXo",
+    authDomain: "forum-258b9.firebaseapp.com",
+    databaseURL: "https://forum-258b9.firebaseio.com",
+    projectId: "forum-258b9",
+    storageBucket: "forum-258b9.appspot.com",
+    messagingSenderId: "518007226153",
+    appId: "1:518007226153:web:9577904c8b1352b2840138",
+    measurementId: "G-TYZ9KVCLMF"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+<script src="js/main.js"></script>
+<script src="js/signup.js"></script>
+<body>
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="index.html" class="brand-logo">social2day</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="AboutUs.html">About Us</a></li>
+        <li><a href="feed.html">Feed</a></li>
+        <li><a href="AboutUs.html">Profile</a></li>
+        <button class="btn waves-effect waves-light" id="logout" type="button" name="action" onclick="logout()">Logout</button>
+      </ul>
+
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="AboutUs.html">About Us</a></li>
+        <li><a href="feed.html">Feed</a></li>
+        <li><a href="AboutUs.html">Profile</a></li>
+        <button class="btn waves-effect waves-light" id="logout" type="button" name="action" onclick="logout()">Logout</button>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <div class="row center">
+        <h3 class="header col s12 light">Submit a Post</h3>
+      </div>
+      <div class="row center">
+        <h5 id="status" class="header col s12 light"></h5>
+      </div>
+      <br><br>
+
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="section">
+
+        
+        <div class="row">
+          <form class="col s12">
+            <div class="row">
+              <div class="input-field col s12">
+                  <i class="material-icons prefix">account_circle</i>
+                <input placeholder="" id="name" type="text" class="validate">
+                <label for="first_name">Name</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input placeholder="" id="email" type="text" class="validate">
+                <label for="email">E-mail</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="title" type="text" class="validate">
+                <label for="title">Issue Title</label>
+              </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <textarea id="desctext" class="materialize-textarea"></textarea>
+                    <label for="desc">Description</label>
+                  </div>
+            </div>
+            <div class="row">
+                <label>Tag</label>
+                <select class="browser-default" id="tags">
+                  <option value="" disabled selected>Choose your option</option>
+                  <option value="Water">Water</option>
+                  <option value="Security">Security</option>
+                  <option value="Maintainence">Maintainence</option>
+                </select>
+            </div>
+          <div class="row">
+            
+            <div class="col s12">
+                <button class="btn waves-effect waves-light" type="button" name="action" onclick="data()">Post
+                    <i class="material-icons right">send</i>
+                  </button>
+            </div>
+             
+
+          </div>
+                
+              </form>
+        </div>
+        
+
+    </div>
+    <br><br>
+  </div>
+
+  
+  <footer class="page-footer orange">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Company Bio</h5>
+          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Names</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Sheersendu Ghosh</a></li>
+            <li><a class="white-text" href="#!">Rajarshi Lahiri</a></li>
+            <li><a class="white-text" href="#!">Priyanka Bhadury</a></li>
+            <li><a class="white-text" href="#!">Bibek Naha</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="https://mail.google.com/mail/">shibrata15@gmail.com</a></li>
+            <li><a class="white-text" href="https://mail.google.com/mail/">rajarshila98@gmail.com</a></li>
+            <li><a class="white-text" href="https://mail.google.com/mail/">priyankabhadury5@gmail.com</a></li>
+            <li><a class="white-text" href="https://mail.google.com/mail/">bibek.naha123@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="orange-text text-lighten-3" href="">Sheershendu, Rajarshi, Priyanka, Bibek</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  
+
+  </body>
+</html>

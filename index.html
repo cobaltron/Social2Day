@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Social2Day</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+     <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-database.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-auth.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCplQZXqh36oHLvGQR09jt3YzsRZN1dXXo",
+    authDomain: "forum-258b9.firebaseapp.com",
+    databaseURL: "https://forum-258b9.firebaseio.com",
+    projectId: "forum-258b9",
+    storageBucket: "forum-258b9.appspot.com",
+    messagingSenderId: "518007226153",
+    appId: "1:518007226153:web:9577904c8b1352b2840138",
+    measurementId: "G-TYZ9KVCLMF"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+<script src="js/signup.js"></script>
+<script src="js/main.js"></script>
+<body>
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="social2today.jpg" class="brand-logo">Social2Day</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="AboutUs.html">About Us</a></li>
+        <li><a href="feed.html">Feed</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="submit.html">Post</a></li>
+        <button class="btn waves-effect waves-light" id="logout" type="button" name="action" onclick="logout()">Logout</button>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="AboutUs.html">About Us</a></li>
+        <li><a href="feed.html">Feed</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="submit.html">Post</a></li>
+        <button class="btn waves-effect waves-light" id="logout" type="button" name="action" onclick="logout()">Logout</button>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center orange-text">Social2Day</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">A modern responsive web forum for discussion of social issues</h5>
+      </div>
+      <div class="row center">
+        <a href="submit.html" id="download-button" class="btn-large waves-effect waves-light orange">Post as Guest</a>
+      </div>
+      <div class="row center">
+        <button class="" style="background:url(signin_google.jpg);height:42px;width:187px;border-radius: 6px;" type="button" name="action" id="signup" onclick="onsign()">
+        </button>
+      </div>
+      <br><br>
+
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
+            <h5 class="center">Ease of Interaction</h5>
+
+            <p class="light">Using this platform you can post your views either by simply log-in as guest or by creating your own account. So it gives an easier approach for interacting on a social platform and to post personal opinions on any social matter.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
+            <h5 class="center">Social forum</h5>
+
+            <p class="light">It’s a unique platform where people from every corner of the country can come and post their views on the currently prevalent social issues and get to know how others are reacting to it. Our Team has designed this highly responsive website so enable the people to have a brief discussion on any social matter.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
+            <h5 class="center">Technology</h5>
+
+            <p class="light">We, have tried creating experiences that re-imagine the way people interact with technology. Our powerful technology makes it simpler for everyone to go online and allows our users in communicating with one another by posting messages.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <br><br>
+  </div>
+
+  <footer class="page-footer orange">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Company Bio</h5>
+          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Names</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Sheersendu Ghosh</a></li>
+            <li><a class="white-text" href="#!">Rajarshi Lahiri</a></li>
+            <li><a class="white-text" href="#!">Priyanka Bhadury</a></li>
+            <li><a class="white-text" href="#!">Bibek Naha</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="https://mail.google.com/mail/">shibrata15@gmail.com</a></li>
+            <li><a class="white-text" href="https://mail.google.com/mail/">rajarshila98@gmail.com</a></li>
+            <li><a class="white-text" href="https://mail.google.com/mail/">priyankabhadury5@gmail.com</a></li>
+            <li><a class="white-text" href="https://mail.google.com/mail/">bibek.naha123@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="orange-text text-lighten-3" href="">Sheershendu, Rajarshi, Priyanka, Bibek</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+</html>
